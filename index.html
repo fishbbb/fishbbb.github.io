@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    (function () {
+      var lang, theme;
+      try {
+        lang = localStorage.getItem("portfolio-lang");
+        theme = localStorage.getItem("portfolio-theme");
+      } catch (e) {}
+      if (lang !== "en" && lang !== "hans" && lang !== "hant") lang = "en";
+      if (theme !== "light" && theme !== "dark") theme = "light";
+      var root = document.documentElement;
+      root.dataset.lang = lang;
+      root.dataset.theme = theme;
+      root.lang = lang === "hans" ? "zh-Hans" : lang === "hant" ? "zh-Hant" : "en";
+    })();
+  </script>
+  <title>Siyu Liao — Full-stack / AI Engineer</title>
+  <script>
+    document.title = {
+      en: "Siyu Liao — Full-stack / AI Engineer",
+      hans: "廖思瑜 — 全栈 / AI 工程师",
+      hant: "廖思瑜 — 全端 / AI 工程師"
+    }[document.documentElement.dataset.lang || "en"];
+  </script>
+  <meta name="description" content="Siyu Liao builds full-stack AI products — multi-turn agents, RAG pipelines, and production backends — focused on getting technology into production and on real business results.">
+  <meta name="author" content="Siyu Liao">
+  <link rel="canonical" href="https://fishbbb.github.io/">
+  <meta property="og:title" content="Siyu Liao — Full-stack / AI Engineer">
+  <meta property="og:description" content="End-to-end AI products, focused on getting technology into production and on real business results.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://fishbbb.github.io/">
+  <meta name="theme-color" content="#f7f3ec">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23100e0c'/%3E%3Ctext x='16' y='21' text-anchor='middle' font-family='Georgia' font-size='13' fill='%23e0b07a'%3ESL%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,620&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#content">
+    <span class="en">Skip to content</span>
+    <span class="hans">跳到正文</span>
+    <span class="hant">跳至正文</span>
+  </a>
+  <div class="shell">
+    <header class="rail">
+      <div class="switches">
+        <div class="switch lang-switch" role="group" aria-labelledby="lang-legend">
+          <span id="lang-legend" class="sr-only">
+            <span class="en">Language</span>
+            <span class="hans">语言</span>
+            <span class="hant">語言</span>
+          </span>
+          <button type="button" data-set-lang="hans" aria-label="简体中文">简</button>
+          <button type="button" data-set-lang="hant" aria-label="繁體中文">繁</button>
+          <button type="button" data-set-lang="en" aria-label="English">EN</button>
+        </div>
+        <div class="switch theme-switch" role="group" aria-labelledby="theme-legend">
+          <span id="theme-legend" class="sr-only">
+            <span class="en">Color mode</span>
+            <span class="hans">外观</span>
+            <span class="hant">外觀</span>
+          </span>
+          <button type="button" data-set-theme="light">
+            <span class="en">Day</span>
+            <span class="hans">日间</span>
+            <span class="hant">日間</span>
+          </button>
+          <button type="button" data-set-theme="dark">
+            <span class="en">Night</span>
+            <span class="hans">夜间</span>
+            <span class="hant">夜間</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="identity">
+        <p class="eyebrow">
+          <span class="en">Hong Kong</span>
+          <span class="hans">香港</span>
+          <span class="hant">香港</span>
+        </p>
+        <h1>
+          <span class="en">Siyu Liao</span>
+          <span class="hans">廖思瑜</span>
+          <span class="hant">廖思瑜</span>
+        </h1>
+        <p class="name-zh">
+          <span class="en">Preferred first name: Tessa</span>
+          <span class="hans">Siyu Liao</span>
+          <span class="hant">Siyu Liao</span>
+        </p>
+        <p class="role">
+          <span class="en">Full-stack / AI Engineer</span>
+          <span class="hans">全栈 / AI 工程师</span>
+          <span class="hant">全端 / AI 工程師</span>
+        </p>
+        <p class="lede">
+          <span class="en">End-to-end AI products, focused on getting technology into production and on real business results.</span>
+          <span class="hans">交付端到端的 AI 产品，注重技术落地与实际业务效果。</span>
+          <span class="hant">交付端到端的 AI 產品，注重技術落地與實際業務效果。</span>
+        </p>
+        <p class="focus">Python · LLM Agents · RAG</p>
+        <p class="open">
+          <span class="en">Available now · 5 days/week · IANG · internship and full-time</span>
+          <span class="hans">可立即到岗 · 一周五天 · IANG · 日常实习与秋招</span>
+          <span class="hant">可立即到崗 · 一週五天 · IANG · 日常實習與秋招</span>
+        </p>
+      </div>
+
+      <nav class="nav" aria-labelledby="nav-legend">
+        <span id="nav-legend" class="sr-only">
+          <span class="en">Sections</span>
+          <span class="hans">目录</span>
+          <span class="hant">目錄</span>
+        </span>
+        <ul>
+          <li><a href="#about" aria-current="true"><span class="en">About</span><span class="hans">关于</span><span class="hant">關於</span></a></li>
+          <li><a href="#education"><span class="en">Education</span><span class="hans">教育</span><span class="hant">教育</span></a></li>
+          <li><a href="#projects"><span class="en">Projects</span><span class="hans">项目</span><span class="hant">項目</span></a></li>
+          <li><a href="#skills"><span class="en">Skills</span><span class="hans">技能</span><span class="hant">技能</span></a></li>
+          <li><a href="#contact"><span class="en">Contact</span><span class="hans">联系</span><span class="hant">聯絡</span></a></li>
+        </ul>
+      </nav>
+
+      <ul class="rail-contact">
+        <li>
+          <a href="mailto:tessa20030807@hotmail.com">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5.5" width="17" height="13" rx="1.6"/><path d="m4.2 7.2 7.8 5.6 7.8-5.6"/></svg>
+            <span class="sr-only en">Email</span><span class="sr-only hans">邮箱</span><span class="sr-only hant">電郵</span>
+          </a>
+        </li>
+        <li>
+          <a href="tel:+85254898630">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.1 3.8h2.3l1.2 3.2-1.8 1.2a11 11 0 0 0 5 5l1.2-1.8 3.2 1.2v2.3a1.7 1.7 0 0 1-1.8 1.7A14.4 14.4 0 0 1 6.4 5.5a1.7 1.7 0 0 1 1.7-1.7z"/></svg>
+            <span class="sr-only en">Phone</span><span class="sr-only hans">电话</span><span class="sr-only hant">電話</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/fishbbb" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path class="mark" d="M12 .3C5.4.3 0 5.7 0 12.3c0 5.3 3.4 9.8 8.2 11.4.6.1.8-.3.8-.6v-2.1c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.8-1.6 8.2-6.1 8.2-11.4C24 5.7 18.6.3 12 .3z"/></svg>
+            <span class="sr-only">GitHub</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/%E6%80%9D%E7%91%9C-%E5%BB%96-465202387/" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path class="mark" d="M4.7 3.4a2.1 2.1 0 1 0 .1 4.2 2.1 2.1 0 0 0-.1-4.2zM3.1 9.1h3.2V20.6H3.1zM9.6 9.1h3.1v1.6h.1c.4-.8 1.5-1.7 3.1-1.7 3.3 0 3.9 2.2 3.9 5v6.6h-3.2v-5.8c0-1.4 0-3.2-1.9-3.2s-2.2 1.5-2.2 3.1v5.9H9.6z"/></svg>
+            <span class="sr-only">LinkedIn</span>
+          </a>
+        </li>
+      </ul>
+    </header>
+
+    <main id="content">
+      <section id="about" aria-labelledby="about-title">
+        <p class="section-label">01</p>
+        <h2 id="about-title">
+          <span class="en">About</span>
+          <span class="hans">关于</span>
+          <span class="hant">關於</span>
+        </h2>
+        <p class="prose">
+          <span class="en">Siyu Liao, MSc student in Artificial Intelligence and Entrepreneurship at HKUST (graduating July 2027), with a BEng in Software Engineering from Beijing Jiaotong University. Builds full-stack AI systems—multi-turn agents, RAG pipelines, and production backends—including products already in real client trials. Currently living in Hong Kong. Mandarin, Cantonese, and English are all fine for day-to-day work. Available to start immediately, five days a week. Looking for a day-to-day internship and for roles in this autumn’s recruiting.</span>
+          <span class="hans">廖思瑜，香港科技大学人工智能与创业硕士在读，预计2027年7月毕业；本科为北京交通大学软件工程。构建全栈 AI 系统——多轮智能体、RAG 流水线和可上线的后端——并交付过已进入真实客户试用的产品。现居香港，普通话、粤语、英文沟通无障碍。可立即到岗，一周可到岗五天。正在寻找日常实习和秋招岗位。</span>
+          <span class="hant">廖思瑜，香港科技大學人工智能與創業碩士在讀，預計2027年7月畢業；本科為北京交通大學軟件工程。構建全端 AI 系統——多輪智能體、RAG 流水線和可上線的後端——並交付過已進入真實客戶試用的產品。現居香港，普通話、粵語、英文溝通無障礙。可立即到崗，一週可到崗五天。正在尋找日常實習和秋招崗位。</span>
+        </p>
+      </section>
+
+      <section id="education" aria-labelledby="education-title">
+        <p class="section-label">02</p>
+        <h2 id="education-title">
+          <span class="en">Education</span>
+          <span class="hans">教育</span>
+          <span class="hant">教育</span>
+        </h2>
+        <ol class="edu-list">
+          <li>
+            <p class="when">
+              <span class="en">2025 — Jul 2027</span>
+              <span class="hans">2025 — 2027年7月</span>
+              <span class="hant">2025 — 2027年7月</span>
+            </p>
+            <div>
+              <h3>
+                <span class="en">MSc Artificial Intelligence and Entrepreneurship</span>
+                <span class="hans">人工智能与创业硕士</span>
+                <span class="hant">人工智能與創業碩士</span>
+              </h3>
+              <p>
+                <span class="en">HKUST · in progress · expected July 2027</span>
+                <span class="hans">香港科技大学 · 在读 · 预计2027年7月毕业</span>
+                <span class="hant">香港科技大學 · 在讀 · 預計2027年7月畢業</span>
+              </p>
+            </div>
+          </li>
+          <li>
+            <p class="when">2021 — 2025</p>
+            <div>
+              <h3>
+                <span class="en">BEng Software Engineering</span>
+                <span class="hans">软件工程学士</span>
+                <span class="hant">軟件工程學士</span>
+              </h3>
+              <p>
+                <span class="en">Beijing Jiaotong University</span>
+                <span class="hans">北京交通大学</span>
+                <span class="hant">北京交通大學</span>
+              </p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <section id="projects" aria-labelledby="projects-title">
+        <p class="section-label">03</p>
+        <h2 id="projects-title">
+          <span class="en">Projects</span>
+          <span class="hans">项目</span>
+          <span class="hant">項目</span>
+        </h2>
+
+        <article class="project">
+          <p class="num">01</p>
+          <div>
+            <h3>EFIND</h3>
+            <p class="sub">
+              <span class="en">B2B Intelligent Prospecting Platform</span>
+              <span class="hans">B2B 智能获客平台</span>
+              <span class="hant">B2B 智能獲客平台</span>
+            </p>
+            <p class="meta">
+              <span class="en">Lead Developer · Oct 2025 —</span>
+              <span class="hans">主导开发 · 2025年10月 —</span>
+              <span class="hant">主導開發 · 2025年10月 —</span>
+            </p>
+            <dl class="facts">
+              <div>
+                <dt><span class="en">Description</span><span class="hans">项目描述</span><span class="hant">項目描述</span></dt>
+                <dd>
+                  <span class="en">B2B prospecting agent. Sales enter the company and target customers, then mark each prospect yes, no, or already a customer. The choice is written into the ICP. A yes opens a background check—upstream and downstream, customs records, contacts, and the prospect’s projects—and an outreach draft.</span>
+                  <span class="hans">B2B 获客智能体。销售录入公司与目标客户，将候选标为是、不是或已是。该选择自动沉淀并更新 ICP。标为「是」的客户进入背调，范围包括上下游、海关记录、联系人与目标项目，并生成外联草稿。</span>
+                  <span class="hant">B2B 獲客智能體。銷售錄入公司與目標客戶，將候選標為是、不是或已是。該選擇自動沉澱並更新 ICP。標為「是」的客戶進入背調，範圍包括上下游、海關記錄、聯絡人與目標項目，並生成外聯草稿。</span>
+                </dd>
+              </div>
+              <div>
+                <dt><span class="en">Stack</span><span class="hans">技术栈</span><span class="hant">技術棧</span></dt>
+                <dd>Python · FastAPI · React/TS · PostgreSQL · Docker</dd>
+              </div>
+              <div>
+                <dt><span class="en">Contribution</span><span class="hans">个人贡献</span><span class="hant">個人貢獻</span></dt>
+                <dd>
+                  <span class="en">Owned the architecture, multi-turn tool calling, and full-stack delivery.</span>
+                  <span class="hans">负责系统架构、多轮工具调用与全栈交付。</span>
+                  <span class="hant">負責系統架構、多輪工具調用與全端交付。</span>
+                </dd>
+              </div>
+              <div>
+                <dt><span class="en">Results</span><span class="hans">成果数据</span><span class="hant">成果數據</span></dt>
+                <dd>
+                  <span class="en">Found <strong>35</strong> target customers outside the existing database for a client company. One research pass reduced from <strong>about half a day to about 20 minutes</strong>. Onboarding for new sales reduced from <strong>6 months to 1 month</strong>.</span>
+                  <span class="hans">为客户企业找到 <strong>35</strong> 个库外目标客户。单次调研由<strong>约半天缩短至约 20 分钟</strong>。新销售上岗培训由 <strong>6 个月缩短至 1 个月</strong>。</span>
+                  <span class="hant">為客戶企業找到 <strong>35</strong> 個庫外目標客戶。單次調研由<strong>約半天縮短至約 20 分鐘</strong>。新銷售上崗培訓由 <strong>6 個月縮短至 1 個月</strong>。</span>
+                </dd>
+              </div>
+            </dl>
+            <figure class="shot carousel" data-carousel>
+              <div class="carousel-stage">
+                <div class="carousel-slide is-on">
+                  <img class="hans" src="media/efind-company-hans.png" alt="EFIND 公司信息：名称、业务和目标客户" width="1260" height="700">
+                  <img class="hant" src="media/efind-company-hant.png" alt="EFIND 公司資料：名稱、業務和目標客戶" width="1260" height="700">
+                  <img class="en" src="media/efind-company-en.png" alt="EFIND company profile: name, business, and target customers" width="1260" height="700">
+                </div>
+                <div class="carousel-slide">
+                  <img class="hans" src="media/efind-judge-hans.png" alt="EFIND 判断客户：销售标成是、不是或已是" width="1260" height="700">
+                  <img class="hant" src="media/efind-judge-hant.png" alt="EFIND 判斷客戶：銷售標成是、不是或已是" width="1260" height="700">
+                  <img class="en" src="media/efind-judge-en.png" alt="EFIND prospect judgment: sales mark yes, no, or already a customer" width="1260" height="700">
+                </div>
+                <div class="carousel-slide">
+                  <img class="hans" src="media/efind-icp-hans.png" alt="EFIND：销售选择后，判断已沉淀并更新 ICP" width="1260" height="700">
+                  <img class="hant" src="media/efind-icp-hant.png" alt="EFIND：銷售選擇後，判斷已沉澱並更新 ICP" width="1260" height="700">
+                  <img class="en" src="media/efind-icp-en.png" alt="EFIND: the sales choice is written into the ICP" width="1260" height="700">
+                </div>
+                <div class="carousel-slide">
+                  <img class="hans" src="media/efind-research-hans.png" alt="EFIND 客户背调：上下游、海关记录、联系人和目标项目" width="1260" height="700">
+                  <img class="hant" src="media/efind-research-hant.png" alt="EFIND 客戶背調：上下游、海關記錄、聯絡人和目標項目" width="1260" height="700">
+                  <img class="en" src="media/efind-research-en.png" alt="EFIND background check: supply chain, customs records, contacts, and projects" width="1260" height="700">
+                </div>
+                <div class="carousel-slide">
+                  <img class="hans" src="media/efind-draft-hans.png" alt="EFIND 外联草稿：主题和正文" width="1260" height="700">
+                  <img class="hant" src="media/efind-draft-hant.png" alt="EFIND 外聯草稿：主題和正文" width="1260" height="700">
+                  <img class="en" src="media/efind-draft-en.png" alt="EFIND outreach draft with subject and body" width="1260" height="700">
+                </div>
+                <button class="glass" type="button" data-dir="-1" data-label-en="Previous feature" data-label-hans="上一张功能" data-label-hant="上一個功能" aria-label="Previous feature"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 6.5 9 12l5.5 5.5"/></svg></button>
+                <button class="glass" type="button" data-dir="1" data-label-en="Next feature" data-label-hans="下一张功能" data-label-hant="下一個功能" aria-label="Next feature"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 6.5 15 12l-5.5 5.5"/></svg></button>
+              </div>
+              <figcaption class="carousel-cap is-on"><span class="hans">核心功能1:公司信息，录入名称、业务和目标客户。</span><span class="hant">核心功能1:公司資料，錄入名稱、業務和目標客戶。</span><span class="en">Core feature 1: Company profile, records the name, business, and target customers.</span></figcaption>
+              <figcaption class="carousel-cap"><span class="hans">核心功能2:判断客户，销售标注为是、不是或已是。</span><span class="hant">核心功能2:判斷客戶，銷售標註為是、不是或已是。</span><span class="en">Core feature 2: Judge a prospect, sales mark yes, no, or already a customer.</span></figcaption>
+              <figcaption class="carousel-cap"><span class="hans">核心功能3:沉淀并更新 ICP，销售选择后自动写入当前画像。</span><span class="hant">核心功能3:沉澱並更新 ICP，銷售選擇後自動寫入當前畫像。</span><span class="en">Core feature 3: Settle and update the ICP, the sales choice is written into the current profile.</span></figcaption>
+              <figcaption class="carousel-cap"><span class="hans">核心功能4:客户背调，查上下游、海关记录、联系人和目标项目。</span><span class="hant">核心功能4:客戶背調，查上下游、海關記錄、聯絡人和目標項目。</span><span class="en">Core feature 4: Background check, covers upstream and downstream, customs records, contacts, and the prospect’s projects.</span></figcaption>
+              <figcaption class="carousel-cap"><span class="hans">核心功能5:外联草稿，按背调写成可发出的主题和正文。</span><span class="hant">核心功能5:外聯草稿，按背調寫成可發出的主題和正文。</span><span class="en">Core feature 5: Outreach draft, writes the subject and body from the background check.</span></figcaption>
+            </figure>
+            <p class="status">
+              <a class="en" href="mailto:tessa20030807@hotmail.com?subject=Walkthrough%3A%20EFIND">Internal — walkthrough on request</a>
+              <a class="hans" href="mailto:tessa20030807@hotmail.com?subject=%E8%AE%B2%E8%A7%A3%EF%BC%9AEFIND">内部项目 — 可约讲解</a>
+              <a class="hant" href="mailto:tessa20030807@hotmail.com?subject=%E8%AC%9B%E8%A7%A3%EF%BC%9AEFIND">內部項目 — 可約講解</a>
+            </p>
+          </div>
+        </article>
+
+        <article class="project">
+          <p class="num">02</p>
+          <div>
+            <h3>
+              <span class="en">Intelligent Customs Data Platform</span>
+              <span class="hans">智能海关助手</span>
+              <span class="hant">智能海關助手</span>
+            </h3>
+            <p class="sub">
+              <span class="en" lang="zh-Hans">智能海关助手</span>
+              <span class="hans">Intelligent Customs Data Platform</span>
+              <span class="hant">Intelligent Customs Data Platform</span>
+            </p>
+            <p class="meta">
+              <span class="en">Lead Developer</span>
+              <span class="hans">主导开发</span>
+              <span class="hant">主導開發</span>
+            </p>
+            <dl class="facts">
+              <div>
+                <dt><span class="en">Description</span><span class="hans">项目描述</span><span class="hant">項目描述</span></dt>
+                <dd>
+                  <span class="en">Vertical agent for customs data. It covers entity confirmation, retrieval, supply-chain analysis, reports, and multi-turn Q&amp;A, and is delivered self-hosted.</span>
+                  <span class="hans">面向海关数据的垂直智能体。覆盖实体确认、检索、供应链分析、报告与多轮问答，并以自托管方式交付。</span>
+                  <span class="hant">面向海關數據的垂直智能體。覆蓋實體確認、檢索、供應鏈分析、報告與多輪問答，並以自託管方式交付。</span>
+                </dd>
+              </div>
+              <div>
+                <dt><span class="en">Stack</span><span class="hans">技术栈</span><span class="hant">技術棧</span></dt>
+                <dd>Python · <span class="en">Agents</span><span class="hans">智能体</span><span class="hant">智能體</span> · FastAPI · <span class="en">Linux self-host</span><span class="hans">Linux 自托管</span><span class="hant">Linux 自託管</span></dd>
+              </div>
+              <div>
+                <dt><span class="en">Contribution</span><span class="hans">个人贡献</span><span class="hant">個人貢獻</span></dt>
+                <dd>
+                  <span class="en">Built the full stack and delivered it into the client’s self-hosted environment.</span>
+                  <span class="hans">完成全栈实现，并交付到客户的自托管环境。</span>
+                  <span class="hant">完成全端實現，並交付到客戶的自託管環境。</span>
+                </dd>
+              </div>
+              <div>
+                <dt><span class="en">Results</span><span class="hans">成果数据</span><span class="hant">成果數據</span></dt>
+                <dd>
+                  <span class="en">In use at <strong>1</strong> manufacturing company. During a <strong>7-day</strong> trial, completed one supplier background check for a key account. One research pass reduced from <strong>about 3–4 hours to about 30 minutes</strong>.</span>
+                  <span class="hans">一家制造业公司正在使用。在 <strong>7</strong> 天试用期内完成一次重点客户供应商背调。单次研究由<strong>约 3–4 小时缩短至约 30 分钟</strong>。</span>
+                  <span class="hant">一家製造業公司正在使用。在 <strong>7</strong> 天試用期內完成一次重點客戶供應商背調。單次研究由<strong>約 3–4 小時縮短至約 30 分鐘</strong>。</span>
+                </dd>
+              </div>
+            </dl>
+            <figure class="shot carousel" data-carousel>
+              <div class="carousel-stage">
+                <div class="carousel-slide is-on">
+                  <img class="hans" src="media/customs-confirm-hans.png" alt="原企智能海关助手：两个相近企业名，请确认查哪一家" width="1260" height="740">
+                  <img class="hant" src="media/customs-confirm-hant.png" alt="原企智能海關助手：兩個相近企業名，請確認查哪一家" width="1260" height="740">
+                  <img class="en" src="media/customs-confirm-en.png" alt="Yuanqi Customs Assistant asking which of two similar company names to look up" width="1260" height="740">
+                </div>
+                <div class="carousel-slide">
+                  <img class="hans" src="media/customs-imports-hans.png" alt="原企智能海关助手：确认企业后列出进口记录" width="1260" height="740">
+                  <img class="hant" src="media/customs-imports-hant.png" alt="原企智能海關助手：確認企業後列出進口記錄" width="1260" height="740">
+                  <img class="en" src="media/customs-imports-en.png" alt="Yuanqi Customs Assistant listing import records after the company is confirmed" width="1260" height="740">
+                </div>
+                <div class="carousel-slide">
+                  <img class="hans" src="media/customs-chain-hans.png" alt="原企智能海关助手：上游、本公司和下游" width="1260" height="740">
+                  <img class="hant" src="media/customs-chain-hant.png" alt="原企智能海關助手：上游、本公司和下游" width="1260" height="740">
+                  <img class="en" src="media/customs-chain-en.png" alt="Yuanqi Customs Assistant summarizing upstream, this company, and downstream" width="1260" height="740">
+                </div>
+                <div class="carousel-slide">
+                  <img class="hans" src="media/customs-docs-hans.png" alt="原企智能海关助手文档库：进口记录、税号说明和供应商页" width="1260" height="740">
+                  <img class="hant" src="media/customs-docs-hant.png" alt="原企智能海關助手文檔庫：進口記錄、稅號說明和供應商頁" width="1260" height="740">
+                  <img class="en" src="media/customs-docs-en.png" alt="Yuanqi Customs Assistant document library: import record, HS note, and supplier page" width="1260" height="740">
+                </div>
+                <button class="glass" type="button" data-dir="-1" data-label-en="Previous feature" data-label-hans="上一张功能" data-label-hant="上一個功能" aria-label="Previous feature"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 6.5 9 12l5.5 5.5"/></svg></button>
+                <button class="glass" type="button" data-dir="1" data-label-en="Next feature" data-label-hans="下一张功能" data-label-hant="下一個功能" aria-label="Next feature"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 6.5 15 12l-5.5 5.5"/></svg></button>
+              </div>
+              <figcaption class="carousel-cap is-on"><span class="hans">核心功能1:确认企业，名称相近时先问清查哪一家。</span><span class="hant">核心功能1:確認企業，名稱相近時先問清查哪一家。</span><span class="en">Core feature 1: Confirm the company, asks which one to look up when two names are close.</span></figcaption>
+              <figcaption class="carousel-cap"><span class="hans">核心功能2:进口记录，确认之后列出日期、交易方、货品和来源国。</span><span class="hant">核心功能2:進口記錄，確認之後列出日期、交易方、貨品和來源國。</span><span class="en">Core feature 2: Import records, lists date, counterparty, goods, and origin after confirmation.</span></figcaption>
+              <figcaption class="carousel-cap"><span class="hans">核心功能3:供应链，把上游、本公司和下游归到同一家。</span><span class="hant">核心功能3:供應鏈，把上游、本公司和下游歸到同一家。</span><span class="en">Core feature 3: Supply chain, ties upstream, this company, and downstream to the confirmed entity.</span></figcaption>
+              <figcaption class="carousel-cap"><span class="hans">核心功能4:文档库，把进口记录、税号说明和供应商页面放在一起。</span><span class="hant">核心功能4:文檔庫，把進口記錄、稅號說明和供應商頁面放在一起。</span><span class="en">Core feature 4: Document library, keeps the import record, HS note, and supplier page together.</span></figcaption>
+            </figure>
+            <p class="status">
+              <a class="en" href="mailto:tessa20030807@hotmail.com?subject=Walkthrough%3A%20Customs%20Data%20Platform">Internal — walkthrough on request</a>
+              <a class="hans" href="mailto:tessa20030807@hotmail.com?subject=%E8%AE%B2%E8%A7%A3%EF%BC%9A%E6%99%BA%E8%83%BD%E6%B5%B7%E5%85%B3%E5%8A%A9%E6%89%8B">内部项目 — 可约讲解</a>
+              <a class="hant" href="mailto:tessa20030807@hotmail.com?subject=%E8%AC%9B%E8%A7%A3%EF%BC%9A%E6%99%BA%E8%83%BD%E6%B5%B7%E9%97%9C%E5%8A%A9%E6%89%8B">內部項目 — 可約講解</a>
+            </p>
+          </div>
+        </article>
+
+        <article class="project">
+          <p class="num">03</p>
+          <div>
+            <h3>PMCursor</h3>
+            <p class="sub">
+              <span class="en">PM workspace</span>
+              <span class="hans">产品经理工作台</span>
+              <span class="hant">產品經理工作台</span>
+            </p>
+            <p class="meta">
+              <span class="en">Architecture &amp; System Dev · Feb — Apr 2026</span>
+              <span class="hans">架构与系统开发 · 2026年2–4月</span>
+              <span class="hant">架構與系統開發 · 2026年2–4月</span>
+            </p>
+            <dl class="facts">
+              <div>
+                <dt><span class="en">Description</span><span class="hans">项目描述</span><span class="hant">項目描述</span></dt>
+                <dd>
+                  <span class="en">A workspace for product managers. It writes a plan, then runs it through multi-turn tool calls for surveys and staged research, and writes structured results.</span>
+                  <span class="hans">产品经理工作台。先生成执行计划，再通过多轮工具调用完成问卷与分阶段调研，并输出结构化结果。</span>
+                  <span class="hant">產品經理工作台。先生成執行計劃，再通過多輪工具調用完成問卷與分階段調研，並輸出結構化結果。</span>
+                </dd>
+              </div>
+              <div>
+                <dt><span class="en">Stack</span><span class="hans">技术栈</span><span class="hant">技術棧</span></dt>
+                <dd>Python · <span class="en">Agents</span><span class="hans">智能体</span><span class="hant">智能體</span> · <span class="en">Backend</span><span class="hans">后端</span><span class="hant">後端</span></dd>
+              </div>
+              <div>
+                <dt><span class="en">Contribution</span><span class="hans">个人贡献</span><span class="hant">個人貢獻</span></dt>
+                <dd>
+                  <span class="en">Built the backend runtime and the structured-result output.</span>
+                  <span class="hans">实现后端运行时与结构化结果输出。</span>
+                  <span class="hant">實現後端運行時與結構化結果輸出。</span>
+                </dd>
+              </div>
+              <div>
+                <dt><span class="en">Results</span><span class="hans">成果数据</span><span class="hant">成果數據</span></dt>
+                <dd>
+                  <span class="en">A classmate used it for a course assignment. That run’s Open Coding covered <strong>957</strong> comments, <strong>149</strong> passed triage, and <strong>110</strong> contained product information. It also produced a 7-question survey, a 16-question conjoint survey, and an interview script.</span>
+                  <span class="hans">一名同学用它完成课程作业。该次 Open Coding 处理 <strong>957</strong> 条评论，Triage 通过 <strong>149</strong> 条，<strong>110</strong> 条含产品信息，并生成 7 题问卷、16 题联合分析问卷和访谈稿。</span>
+                  <span class="hant">一名同學用它完成課程作業。該次 Open Coding 處理 <strong>957</strong> 條評論，Triage 通過 <strong>149</strong> 條，<strong>110</strong> 條含產品信息，並生成 7 題問卷、16 題聯合分析問卷和訪談稿。</span>
+                </dd>
+              </div>
+            </dl>
+            <figure class="shot carousel" data-carousel>
+              <div class="carousel-stage">
+                <div class="carousel-slide is-on">
+                  <img class="hans" src="media/pmcursor-plan-hans.png" alt="PMCursor 计划：先写步骤，再按步骤调用工具" width="1260" height="720">
+                  <img class="hant" src="media/pmcursor-plan-hant.png" alt="PMCursor 計劃：先寫步驟，再按步驟調用工具" width="1260" height="720">
+                  <img class="en" src="media/pmcursor-plan-en.png" alt="PMCursor plan: write the steps, then call tools in that order" width="1260" height="720">
+                </div>
+                <div class="carousel-slide">
+                  <img class="hans" src="media/pmcursor-new-hans.png" alt="PMCursor 新建 Research：填写主题" width="1260" height="720">
+                  <img class="hant" src="media/pmcursor-new-hant.png" alt="PMCursor 新建 Research：填寫主題" width="1260" height="720">
+                  <img class="en" src="media/pmcursor-new-en.png" alt="PMCursor new research dialog with a topic field" width="1260" height="720">
+                </div>
+                <div class="carousel-slide">
+                  <img class="hans" src="media/pmcursor-coding-hans.png" alt="PMCursor Open Coding：主题和要纳入的维度" width="1260" height="720">
+                  <img class="hant" src="media/pmcursor-coding-hant.png" alt="PMCursor Open Coding：主題和要納入的維度" width="1260" height="720">
+                  <img class="en" src="media/pmcursor-coding-en.png" alt="PMCursor Open Coding with the topic and the dimensions to include" width="1260" height="720">
+                </div>
+                <div class="carousel-slide">
+                  <img class="hans" src="media/pmcursor-report-hans.png" alt="PMCursor 最终报告：结论和下一步" width="1260" height="720">
+                  <img class="hant" src="media/pmcursor-report-hant.png" alt="PMCursor 最終報告：結論和下一步" width="1260" height="720">
+                  <img class="en" src="media/pmcursor-report-en.png" alt="PMCursor final report with a conclusion and the next step" width="1260" height="720">
+                </div>
+                <button class="glass" type="button" data-dir="-1" data-label-en="Previous feature" data-label-hans="上一张功能" data-label-hant="上一個功能" aria-label="Previous feature"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 6.5 9 12l5.5 5.5"/></svg></button>
+                <button class="glass" type="button" data-dir="1" data-label-en="Next feature" data-label-hans="下一张功能" data-label-hant="下一個功能" aria-label="Next feature"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 6.5 15 12l-5.5 5.5"/></svg></button>
+              </div>
+              <figcaption class="carousel-cap is-on"><span class="hans">核心功能1:先计划再执行，在右侧 Agent 对话里写好步骤，再按顺序调用工具。</span><span class="hant">核心功能1:先計劃再執行，在右側 Agent 對話裡寫好步驟，再按順序調用工具。</span><span class="en">Core feature 1: Plan then execute, writes the steps in the agent chat on the right, then calls tools in that order.</span></figcaption>
+              <figcaption class="carousel-cap"><span class="hans">核心功能2:新建 Research，先定主题再进入这一轮。</span><span class="hant">核心功能2:新建 Research，先定主題再進入這一輪。</span><span class="en">Core feature 2: New research, sets the topic before the round starts.</span></figcaption>
+              <figcaption class="carousel-cap"><span class="hans">核心功能3:Open Coding，真实结果页。957 条里 Triage 通过 149 条，110 条含产品信息，按原文、维度、是否可修改成表。</span><span class="hant">核心功能3:Open Coding，真實結果頁。957 條裡 Triage 通過 149 條，110 條含產品信息，按原文、維度、是否可修改成表。</span><span class="en">Core feature 3: Open Coding, the real results page. Of 957 comments, 149 passed triage and 110 carry product information, tabled by comment, dimension, and whether it is editable.</span></figcaption>
+              <figcaption class="carousel-cap"><span class="hans">核心功能4:最终报告，给出这一轮的结论，以及问卷落在哪个文件。</span><span class="hant">核心功能4:最終報告，給出這一輪的結論，以及問卷落在哪個檔案。</span><span class="en">Core feature 4: Final report, states the conclusion and where the questionnaire landed.</span></figcaption>
+            </figure>
+            <p class="status">
+              <a class="en" href="mailto:tessa20030807@hotmail.com?subject=Walkthrough%3A%20PMCursor">Internal — walkthrough on request</a>
+              <a class="hans" href="mailto:tessa20030807@hotmail.com?subject=%E8%AE%B2%E8%A7%A3%EF%BC%9APMCursor">内部项目 — 可约讲解</a>
+              <a class="hant" href="mailto:tessa20030807@hotmail.com?subject=%E8%AC%9B%E8%A7%A3%EF%BC%9APMCursor">內部項目 — 可約講解</a>
+            </p>
+          </div>
+        </article>
+
+        <article class="project">
+          <p class="num">04</p>
+          <div>
+            <h3>SignalRadar</h3>
+            <p class="sub">
+              <span class="en">Manufacturing risk</span>
+              <span class="hans">制造业风险</span>
+              <span class="hant">製造業風險</span>
+            </p>
+            <p class="meta">
+              <span class="en">Sole Developer · 2026</span>
+              <span class="hans">独立开发 · 2026</span>
+              <span class="hant">獨立開發 · 2026</span>
+            </p>
+            <dl class="facts">
+              <div>
+                <dt><span class="en">Description</span><span class="hans">项目描述</span><span class="hant">項目描述</span></dt>
+                <dd>
+                  <span class="en">Manufacturing-risk monitoring. It collects raw-material prices, supply-chain signals, and competitor information, analyzes them, and shows the result on an alert dashboard.</span>
+                  <span class="hans">制造业风险监测。采集原材料价格、供应链与竞争对手信息，完成分析后呈现在告警看板上。</span>
+                  <span class="hant">製造業風險監測。採集原材料價格、供應鏈與競爭對手信息，完成分析後呈現在警示看板上。</span>
+                </dd>
+              </div>
+              <div>
+                <dt><span class="en">Stack</span><span class="hans">技术栈</span><span class="hant">技術棧</span></dt>
+                <dd>Python · <span class="en">Pipelines</span><span class="hans">流水线</span><span class="hant">流水線</span> · <span class="en">Dashboards</span><span class="hans">看板</span><span class="hant">看板</span> · <span class="en">Linux deploy</span><span class="hans">Linux 部署</span><span class="hant">Linux 部署</span></dd>
+              </div>
+              <div>
+                <dt><span class="en">Contribution</span><span class="hans">个人贡献</span><span class="hant">個人貢獻</span></dt>
+                <dd>
+                  <span class="en">Independent full-stack implementation, 2026.</span>
+                  <span class="hans">2026 年独立承担全栈开发实现。</span>
+                  <span class="hant">2026 年獨立承擔全端開發實現。</span>
+                </dd>
+              </div>
+              <div>
+                <dt><span class="en">Results</span><span class="hans">成果数据</span><span class="hant">成果數據</span></dt>
+                <dd>
+                  <span class="en">Trial use by <strong>4</strong> companies and <strong>2</strong> professors.</span>
+                  <span class="hans"><strong>4</strong> 家公司与 <strong>2</strong> 位教授试用。</span>
+                  <span class="hant"><strong>4</strong> 家公司與 <strong>2</strong> 位教授試用。</span>
+                </dd>
+              </div>
+            </dl>
+            <figure class="shot carousel" data-carousel>
+              <div class="carousel-stage">
+                <div class="carousel-slide is-on">
+                  <img class="hans" src="media/signalradar-home-hans.png" alt="SignalRadar 首页：原料、供应和竞争对手告警" width="1260" height="760">
+                  <img class="hant" src="media/signalradar-home-hant.png" alt="SignalRadar 首頁：原料、供應和競爭對手警示" width="1260" height="760">
+                  <img class="en" src="media/signalradar-home-en.png" alt="SignalRadar home: material, supply, and competitor alerts" width="1260" height="760">
+                </div>
+                <div class="carousel-slide">
+                  <img class="hans" src="media/signalradar-upstream-hans.png" alt="SignalRadar 上游：钨精矿报价越过提醒线" width="1260" height="760">
+                  <img class="hant" src="media/signalradar-upstream-hant.png" alt="SignalRadar 上游：鎢精礦報價越過提醒線" width="1260" height="760">
+                  <img class="en" src="media/signalradar-upstream-en.png" alt="SignalRadar upstream: tungsten quote crossed the alert line" width="1260" height="760">
+                </div>
+                <div class="carousel-slide">
+                  <img class="hans" src="media/signalradar-events-hans.png" alt="SignalRadar 事件中心：三条未读" width="1260" height="760">
+                  <img class="hant" src="media/signalradar-events-hant.png" alt="SignalRadar 事件中心：三條未讀" width="1260" height="760">
+                  <img class="en" src="media/signalradar-events-en.png" alt="SignalRadar events: three unread items" width="1260" height="760">
+                </div>
+                <div class="carousel-slide">
+                  <img class="hans" src="media/signalradar-brief-hans.png" alt="SignalRadar 经营简报：结论和建议动作" width="1260" height="760">
+                  <img class="hant" src="media/signalradar-brief-hant.png" alt="SignalRadar 經營簡報：結論和建議動作" width="1260" height="760">
+                  <img class="en" src="media/signalradar-brief-en.png" alt="SignalRadar executive brief: conclusion and a suggested action" width="1260" height="760">
+                </div>
+                <button class="glass" type="button" data-dir="-1" data-label-en="Previous feature" data-label-hans="上一张功能" data-label-hant="上一個功能" aria-label="Previous feature"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 6.5 9 12l5.5 5.5"/></svg></button>
+                <button class="glass" type="button" data-dir="1" data-label-en="Next feature" data-label-hans="下一张功能" data-label-hant="下一個功能" aria-label="Next feature"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 6.5 15 12l-5.5 5.5"/></svg></button>
+              </div>
+              <figcaption class="carousel-cap is-on"><span class="hans">核心功能1:告警看板，将原料、供应与竞争对手汇总到同一页。</span><span class="hant">核心功能1:警示看板，將原料、供應與競爭對手匯總到同一頁。</span><span class="en">Core feature 1: Alert board, puts materials, supply, and competitors on one page.</span></figcaption>
+              <figcaption class="carousel-cap"><span class="hans">核心功能2:上游原料，展示报价、提醒线和写入案卷的证据。</span><span class="hant">核心功能2:上游原料，展示報價、提醒線和寫入案卷的證據。</span><span class="en">Core feature 2: Upstream material, shows the quote, the alert line, and the evidence filed to the dossier.</span></figcaption>
+              <figcaption class="carousel-cap"><span class="hans">核心功能3:事件中心，集中未读事件，并可回到对应对象。</span><span class="hant">核心功能3:事件中心，集中未讀事件，並可回到對應對象。</span><span class="en">Core feature 3: Event center, gathers unread events and links each one back to its object.</span></figcaption>
+              <figcaption class="carousel-cap"><span class="hans">核心功能4:经营简报，由追踪命中生成结论和建议动作。</span><span class="hant">核心功能4:經營簡報，由追蹤命中生成結論和建議動作。</span><span class="en">Core feature 4: Executive brief, turns tracking hits into a conclusion and a suggested action.</span></figcaption>
+            </figure>
+            <p class="status">
+              <a class="en" href="mailto:tessa20030807@hotmail.com?subject=Walkthrough%3A%20SignalRadar">Internal — walkthrough on request</a>
+              <a class="hans" href="mailto:tessa20030807@hotmail.com?subject=%E8%AE%B2%E8%A7%A3%EF%BC%9ASignalRadar">内部项目 — 可约讲解</a>
+              <a class="hant" href="mailto:tessa20030807@hotmail.com?subject=%E8%AC%9B%E8%A7%A3%EF%BC%9ASignalRadar">內部項目 — 可約講解</a>
+            </p>
+          </div>
+        </article>
+
+        <article class="project">
+          <p class="num">05</p>
+          <div>
+            <h3>WeixinClawBot</h3>
+            <p class="sub">
+              <span class="en">Personal WeChat assistant</span>
+              <span class="hans">个人微信助手</span>
+              <span class="hant">個人微信助手</span>
+            </p>
+            <p class="meta">
+              <span class="en">Personal · in daily use</span>
+              <span class="hans">个人项目 · 正在使用</span>
+              <span class="hant">個人項目 · 正在使用</span>
+            </p>
+            <dl class="facts">
+              <div>
+                <dt><span class="en">Description</span><span class="hans">项目描述</span><span class="hant">項目描述</span></dt>
+                <dd>
+                  <span class="en">A personal agent connected to WeChat, separate from WeChat’s built-in assistant. It answers questions, sends scheduled reminders, can write a skill from a request, and keeps memory so it can extend itself.</span>
+                  <span class="hans">接入微信的个人智能体，不是微信自带助手。支持智能问答与定时提醒，可按要求生成 skill，并保留记忆、持续扩展能力。</span>
+                  <span class="hant">接入微信的個人智能體，不是微信自帶助手。支持智能問答與定時提醒，可按要求生成 skill，並保留記憶、持續擴展能力。</span>
+                </dd>
+              </div>
+              <div>
+                <dt><span class="en">Stack</span><span class="hans">技术栈</span><span class="hant">技術棧</span></dt>
+                <dd>Python · <span class="en">Agent</span><span class="hans">智能体</span><span class="hant">智能體</span> · <span class="en">WeChat</span><span class="hans">微信</span><span class="hant">微信</span></dd>
+              </div>
+              <div>
+                <dt><span class="en">Contribution</span><span class="hans">个人贡献</span><span class="hant">個人貢獻</span></dt>
+                <dd>
+                  <span class="en">Designed and built it independently, and runs it for daily use.</span>
+                  <span class="hans">独立设计并开发，已部署为日常使用。</span>
+                  <span class="hant">獨立設計並開發，已部署為日常使用。</span>
+                </dd>
+              </div>
+              <div>
+                <dt><span class="en">Results</span><span class="hans">成果数据</span><span class="hant">成果數據</span></dt>
+                <dd>
+                  <span class="en">In continuous use since launch. <strong>3</strong> users: self and both parents. About <strong>5–10</strong> skills each.</span>
+                  <span class="hans">上线后持续使用。使用者 <strong>3</strong> 人，为本人与父母，人均 <strong>5–10</strong> 个 skill。</span>
+                  <span class="hant">上線後持續使用。使用者 <strong>3</strong> 人，為本人與父母，人均 <strong>5–10</strong> 個 skill。</span>
+                </dd>
+              </div>
+            </dl>
+            <figure class="shot shot-pair">
+              <img src="media/wechat-reminders.jpg" alt="WeixinClawBot 在微信里发英语阅读、复盘和听力提醒，并指出商品标题把 ThinkBook 写成了 ThinkPad" width="522" height="1024">
+              <img src="media/wechat-qa.jpg" alt="WeixinClawBot 按 15 万纯电基准，拆特斯拉 Model 3 / Y 多出来的钱买到了什么" width="510" height="1024">
+              <figcaption>
+                <span class="hans">核心功能1:定时提醒，到点发送提醒，并核对商品链接。核心功能2:智能问答，按提问拆解性价比。</span>
+                <span class="hant">核心功能1:定時提醒，到點發送提醒，並核對商品連結。核心功能2:智能問答，按提問拆解性價比。</span>
+                <span class="en">Core feature 1: Scheduled reminders, sends them on time and checks a product link. Core feature 2: Q&amp;A, breaks down price and value from a question.</span>
+              </figcaption>
+            </figure>
+            <p class="status">
+              <span class="en">In daily use — family included</span>
+              <span class="hans">真实在用，家人也在用</span>
+              <span class="hant">真實在用，家人也在用</span>
+            </p>
+          </div>
+        </article>
+
+        <article class="project">
+          <p class="num">06</p>
+          <div>
+            <h3>
+              <span class="en">Intelligent Q&amp;A for Enterprise Regulations</span>
+              <span class="hans">企业规章智能问答</span>
+              <span class="hant">企業規章智能問答</span>
+            </h3>
+            <p class="sub">
+              <span class="en" lang="zh-Hans">规章 RAG</span>
+              <span class="hans" lang="zh-Hans">规章 RAG</span>
+              <span class="hant" lang="zh-Hant">規章 RAG</span>
+            </p>
+            <p class="meta">
+              <span class="en">Shenzhou · Jul 2024 — Jan 2025</span>
+              <span class="hans">北京神舟航天软件科技股份有限公司 · 2024年7月 — 2025年1月</span>
+              <span class="hant">北京神舟航天軟件科技股份有限公司 · 2024年7月 — 2025年1月</span>
+            </p>
+            <dl class="facts">
+              <div>
+                <dt><span class="en">Description</span><span class="hans">项目描述</span><span class="hant">項目描述</span></dt>
+                <dd>
+                  <span class="en">Question answering over internal company regulations. Word files are split by chapter and article, then into passages of about 50 characters and stored in FAISS. Retrieval returns the top 5 passages, stitches neighboring passages from the same file, drops duplicates, and cites the source filename.</span>
+                  <span class="hans">企业内部规章制度问答。Word 按章、条切成条款，再以约 50 字写入 FAISS。检索返回前 5 段，把同一文件的相邻段拼回上下文，并去掉重复文段。回答附来源文件名。</span>
+                  <span class="hant">企業內部規章制度問答。Word 按章、條切成條款，再以約 50 字寫入 FAISS。檢索返回前 5 段，把同一檔案的相鄰段拼回上下文，並去掉重複文段。回答附來源檔名。</span>
+                </dd>
+              </div>
+              <div>
+                <dt><span class="en">Stack</span><span class="hans">技术栈</span><span class="hant">技術棧</span></dt>
+                <dd>Python · FAISS · acge · Qwen · MySQL</dd>
+              </div>
+              <div>
+                <dt><span class="en">Contribution</span><span class="hans">个人贡献</span><span class="hant">個人貢獻</span></dt>
+                <dd>
+                  <span class="en">On the AI team, not a solo project. Joined a basic RAG setup and a Q&amp;A page whose corpus was test documents. Built the regulation index, article-level chunking and vector retrieval, the knowledge base, and the database.</span>
+                  <span class="hans">人工智能组内完成，不是独立项目。接手时只有基础 RAG 与问答页，语料为测试文档。负责规章库入库、按章条切分与向量检索，以及知识库和数据库。</span>
+                  <span class="hant">人工智能組內完成，不是獨立項目。接手時只有基礎 RAG 與問答頁，語料為測試文檔。負責規章庫入庫、按章條切分與向量檢索，以及知識庫和數據庫。</span>
+                </dd>
+              </div>
+              <div>
+                <dt><span class="en">Results</span><span class="hans">成果数据</span><span class="hant">成果數據</span></dt>
+                <dd>
+                  <span class="en">The vector index holds <strong>234</strong> regulation documents. Deployed inside the company.</span>
+                  <span class="hans">向量库收录 <strong>234</strong> 份规章文档。已在公司内部部署。</span>
+                  <span class="hant">向量庫收錄 <strong>234</strong> 份規章文檔。已在公司內部部署。</span>
+                </dd>
+              </div>
+            </dl>
+            <p class="status">
+              <span class="en">Internship, inside the company — confidential, no walkthrough</span>
+              <span class="hans">公司实习项目，有保密要求，不提供演示</span>
+              <span class="hant">公司實習項目，有保密要求，不提供演示</span>
+            </p>
+          </div>
+        </article>
+      </section>
+
+      <section id="skills" aria-labelledby="skills-title">
+        <p class="section-label">04</p>
+        <h2 id="skills-title">
+          <span class="en">Skills</span>
+          <span class="hans">技能</span>
+          <span class="hant">技能</span>
+        </h2>
+        <dl class="skills">
+          <div>
+            <dt>
+              <span class="en">Lang</span>
+              <span class="hans">语言</span>
+              <span class="hant">語言</span>
+            </dt>
+            <dd>Python · TypeScript/JavaScript</dd>
+          </div>
+          <div>
+            <dt>
+              <span class="en">Apps</span>
+              <span class="hans">应用</span>
+              <span class="hant">應用</span>
+            </dt>
+            <dd>React · FastAPI · Node.js</dd>
+          </div>
+          <div>
+            <dt>
+              <span class="en">Data</span>
+              <span class="hans">数据</span>
+              <span class="hant">數據</span>
+            </dt>
+            <dd>PostgreSQL · SQLite · FAISS</dd>
+          </div>
+          <div>
+            <dt>AI</dt>
+            <dd>
+              <span class="en">LLM agents · tool calling · RAG</span>
+              <span class="hans">LLM 智能体 · 工具调用 · RAG</span>
+              <span class="hant">LLM 智能體 · 工具調用 · RAG</span>
+            </dd>
+          </div>
+          <div>
+            <dt>
+              <span class="en">Ops</span>
+              <span class="hans">运维</span>
+              <span class="hant">運維</span>
+            </dt>
+            <dd>Docker/Compose · Nginx · Caddy · Linux</dd>
+          </div>
+          <div>
+            <dt>
+              <span class="en">Spoken</span>
+              <span class="hans">口语</span>
+              <span class="hant">口語</span>
+            </dt>
+            <dd>
+              <span class="en">Mandarin (native) · Cantonese (native) · English (IELTS 7.0)</span>
+              <span class="hans">普通话（母语）· 粤语（母语）· 英语（雅思 7.0）</span>
+              <span class="hant">普通話（母語）· 粵語（母語）· 英語（雅思 7.0）</span>
+            </dd>
+          </div>
+        </dl>
+      </section>
+
+      <section id="contact" aria-labelledby="contact-title">
+        <p class="section-label">05</p>
+        <h2 id="contact-title">
+          <span class="en">Contact</span>
+          <span class="hans">联系</span>
+          <span class="hant">聯絡</span>
+        </h2>
+        <p class="prose">
+          <span class="en">Available to start immediately, five days a week, for a day-to-day internship or a full-time role this autumn. IANG visa. Please get in touch for a product walkthrough. Looking forward to hearing from you.</span>
+          <span class="hans">可立即到岗，一周五天，寻找日常实习和秋招全职，持 IANG 签证。欢迎联系进行产品演示讲解！期待和您建立联系。</span>
+          <span class="hant">可立即到崗，一週五天，尋找日常實習和秋招全職，持 IANG 簽證。歡迎聯繫進行產品演示講解！期待和您建立聯繫。</span>
+        </p>
+        <p class="email-line"><a href="mailto:tessa20030807@hotmail.com">tessa20030807@hotmail.com</a></p>
+        <ul class="contact-list">
+          <li><a href="tel:+85254898630">+852 5489 8630</a></li>
+          <li><a href="https://github.com/fishbbb" target="_blank" rel="noopener noreferrer">github.com/fishbbb</a></li>
+          <li><a href="https://www.linkedin.com/in/%E6%80%9D%E7%91%9C-%E5%BB%96-465202387/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        </ul>
+      </section>
+    </main>
+  </div>
+  <script>
+    const titles = {
+      en: "Siyu Liao — Full-stack / AI Engineer",
+      hans: "廖思瑜 — 全栈 / AI 工程师",
+      hant: "廖思瑜 — 全端 / AI 工程師"
+    };
+    const descriptions = {
+      en: "Siyu Liao builds full-stack AI products — multi-turn agents, RAG pipelines, and production backends — focused on getting technology into production and on real business results.",
+      hans: "廖思瑜做全栈 AI 产品——多轮智能体、RAG 流水线和可上线的后端——注重技术落地与实际业务效果。",
+      hant: "廖思瑜做全端 AI 產品——多輪智能體、RAG 流水線和可上線的後端——注重技術落地與實際業務效果。"
+    };
+
+    function syncChrome() {
+      const lang = document.documentElement.dataset.lang || "en";
+      const theme = document.documentElement.dataset.theme || "dark";
+      document.documentElement.lang = lang === "hans" ? "zh-Hans" : lang === "hant" ? "zh-Hant" : "en";
+      document.title = titles[lang];
+      const desc = document.querySelector('meta[name="description"]');
+      if (desc) desc.setAttribute("content", descriptions[lang]);
+      const ogTitle = document.querySelector('meta[property="og:title"]');
+      if (ogTitle) ogTitle.setAttribute("content", titles[lang]);
+      const ogDesc = document.querySelector('meta[property="og:description"]');
+      if (ogDesc) ogDesc.setAttribute("content", descriptions[lang]);
+      const themeColor = document.querySelector('meta[name="theme-color"]');
+      if (themeColor) themeColor.setAttribute("content", theme === "light" ? "#f7f3ec" : "#100e0c");
+      document.querySelectorAll("[data-set-lang]").forEach((btn) => {
+        btn.setAttribute("aria-pressed", btn.dataset.setLang === lang ? "true" : "false");
+      });
+      document.querySelectorAll("[data-set-theme]").forEach((btn) => {
+        btn.setAttribute("aria-pressed", btn.dataset.setTheme === theme ? "true" : "false");
+      });
+      document.querySelectorAll(".glass[data-label-en]").forEach((btn) => {
+        const label = lang === "hans" ? btn.dataset.labelHans : lang === "hant" ? btn.dataset.labelHant : btn.dataset.labelEn;
+        if (label) btn.setAttribute("aria-label", label);
+      });
+    }
+
+    function store(key, value) {
+      try { localStorage.setItem(key, value); } catch (e) {}
+    }
+
+    document.querySelectorAll("[data-set-lang]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        document.documentElement.dataset.lang = btn.dataset.setLang;
+        store("portfolio-lang", btn.dataset.setLang);
+        syncChrome();
+      });
+    });
+
+    document.querySelectorAll("[data-set-theme]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        document.documentElement.dataset.theme = btn.dataset.setTheme;
+        store("portfolio-theme", btn.dataset.setTheme);
+        syncChrome();
+      });
+    });
+
+    syncChrome();
+
+    document.querySelectorAll("[data-carousel]").forEach((root) => {
+      const slides = [...root.querySelectorAll(".carousel-slide")];
+      const caps = [...root.querySelectorAll(".carousel-cap")];
+      let index = 0;
+      function show(next) {
+        index = (next + slides.length) % slides.length;
+        slides.forEach((el, n) => el.classList.toggle("is-on", n === index));
+        caps.forEach((el, n) => el.classList.toggle("is-on", n === index));
+      }
+      root.querySelectorAll("[data-dir]").forEach((btn) => {
+        btn.addEventListener("click", () => show(index + Number(btn.dataset.dir)));
+      });
+    });
+
+    const navLinks = document.querySelectorAll(".nav a");
+    const sections = [...navLinks].map((a) => document.querySelector(a.hash)).filter(Boolean);
+
+    function setActive(id) {
+      navLinks.forEach((a) => {
+        const on = a.hash === "#" + id;
+        a.classList.toggle("is-active", on);
+        if (on) a.setAttribute("aria-current", "true");
+        else a.removeAttribute("aria-current");
+      });
+    }
+
+    if ("IntersectionObserver" in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActive(entry.target.id);
+        });
+      }, { rootMargin: "-20% 0px -55% 0px", threshold: 0.01 });
+      sections.forEach((section) => io.observe(section));
+    }
+  </script>
+</body>
+</html>
